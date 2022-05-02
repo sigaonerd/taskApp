@@ -16,5 +16,8 @@
 	"bugs": {
 		"url": "https://github.com/sigaonerd/taskApp/issues"
 	},
-	"homepage": "https://github.com/sigaonerd/taskApp#readme"
+	"homepage": "https://github.com/sigaonerd/taskApp#readme",
+	"dependencies": {
+		"express": "^4.18.1"
+	}
 }
