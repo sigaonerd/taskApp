@@ -17,7 +17,7 @@ const schema = new GraphQLSchema({
 			meuNome: {
 				type: GraphQLString,
 				resolve() {
-					return 'Marcelo Souza';
+					return 'Marcelo Souza Silva';
 				},
 			},
 		},

@@ -10,10 +10,27 @@ describe('Array', function () {
 });
 
 describe('HTTP Request', function () {
-	it('should get name from simple endpoint', async function () {
+	it('should get name from simple endpoint', async () => {
 		try {
 			const response = await axios.get('http://localhost:4000/nome');
-			assert.equal(response, 'Marcelo Souza');
+			assert.equal(response.data, 'Marcelo Souza Silva');
+		} catch (error) {
+			console.error(error);
+		}
+	});
+
+	it('should get name from graphql"', async () => {
+		try {
+			const response = await axios.post(
+				'http://localhost:4000/graphql',
+				{ query: 'query { meuNome }' },
+				{
+					headers: {
+						'Content-Type': 'application/json',
+					},
+				}
+			);
+			assert.equal(response.data.data.meuNome, 'Marcelo Souza Silva');
 		} catch (error) {
 			console.error(error);
 		}
